@@ -135,3 +135,158 @@ else if(avg >= 60 && avg <= 79){
   }
 }
 
+console.log("A5.10_HW_2")
+console.log("---- ---- ----")
+console.log("Exercise 1")
+console.log("---- ---- ----")
+
+const foodTracker=[
+
+  {
+    day:"Monday",
+    breakfast:300,
+    lunch:300,
+    snack:150,
+    dinner:500
+  },
+
+  {
+    day:"Tuesday",
+    breakfast:250,
+    lunch:450,
+    snack:200,
+    dinner:550
+  },
+
+  {
+    day:"Wednesday",
+    breakfast:350,
+    lunch:550,
+    snack:100,
+    dinner:700
+  },
+
+  {
+    day:"Thursday",
+    breakfast:400,
+    lunch:600,
+    snack:180,
+    dinner:650
+  },
+
+  {
+    day:"Friday",
+    breakfast:280,
+    lunch:480,
+    snack:120,
+    dinner:580
+  },
+
+  {
+    day:"Saturday",
+    breakfast:320,
+    lunch:520,
+    snack:160,
+    dinner:620
+  },
+
+]
+
+console.log("---- ---- ----")
+console.log("1.1")
+console.log("---- ---- ----")
+
+for(let i=0 ; i<foodTracker.length; i++){
+  console.log(
+   "Day: " + foodTracker[i].day + "\n" + "Monday: " + foodTracker[i].breakfast + "\n" + "Lunch: "+foodTracker[i].lunch +"\n"+ "Snack: "+ foodTracker[i].snack +"\n" + "Dinner: "+ foodTracker[i].dinner + "\n" 
+  )
+}
+
+console.log("---- ---- ----")
+console.log("1.2")
+console.log("---- ---- ----")
+
+const midAfternoonCalories = [100, 120, 105, 110, 100, 130]
+
+for(let i=0; i<foodTracker.length; i++){
+  foodTracker[i].midAfternoon= midAfternoonCalories[i];
+}
+
+console.log("Updated Food Tracker with Mid Afternoon Calories: ", foodTracker)
+
+console.log("---- ---- ----")
+console.log("Exercise 2")
+console.log("---- ---- ----")
+
+console.log("2.1")
+console.log("---- ---- ----")
+
+const sundayCalorie={
+  day:"Sunday",
+    breakfast:350,
+    lunch:430,
+    snack:140,
+    dinner:530,
+    midAfternoon:150
+}
+console.log("Calories Consume on Sunday: ",sundayCalorie)
+
+
+console.log("---- ---- ----")
+console.log("2.2")
+console.log("---- ---- ----")
+
+foodTracker.push(sundayCalorie);
+
+console.log("Fodd Tracker with Sunday calories: ",foodTracker)
+
+console.log("---- ---- ----")
+console.log("2.3")
+console.log("---- ---- ----")
+
+for(let i=0; i<foodTracker.length; i++){
+
+let totalCalorie = foodTracker[i].breakfast + foodTracker[i].lunch + foodTracker[i].snack 
+ + foodTracker[i].dinner + foodTracker[i].midAfternoon
+
+  foodTracker[i].totalCalorie = totalCalorie;
+}
+
+console.log(foodTracker)
+
+
+console.log("---- ---- ----")
+console.log("2.4")
+console.log("---- ---- ----")
+
+for(let i=0; i<foodTracker.length; i++){
+
+  const totalNumOfMeals= 5
+  
+  let avgCalorie = foodTracker[i].totalCalorie / totalNumOfMeals;
+
+
+  foodTracker[i].averageCalorie = avgCalorie;
+}
+
+console.log(foodTracker)
+
+
+console.log("---- ---- ----")
+console.log("Exercise 3")
+console.log("---- ---- ----")
+
+for(let i=0; i<foodTracker.length; i++){
+  console.log(
+    "===== Calorie Card for " + foodTracker[i].day + " =====" + "\n" + "Breakfast: " + foodTracker[i].breakfast + "\n" + "Lunch: " + foodTracker[i].lunch + "\n" + "Snack: " + foodTracker[i].snack + "\n" + "Dinner: " +foodTracker[i].dinner
++ "\n" + "Mid Afternoon: " + foodTracker[i].midAfternoon + "\n" +"-----" + "\n" + "Total: " +foodTracker[i].totalCalorie + "\n" + "Average: " + foodTracker[i].averageCalorie + "\n" + "Comment: " + Comment(foodTracker[i].totalCalorie)+"\n"+ "---- ---- ----" +"\n" )
+}
+
+function Comment(value){
+  if(value <= 1550){
+    return "Your calorie intake was within limits."
+  }
+  else {
+      return "Your calorie intake was higher than recommended."
+    }
+}
